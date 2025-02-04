@@ -1,6 +1,6 @@
 class Person:
     def __init__(self, name: str, surname: str):
-        self.name, self.surname = name, surname
+        self._name, self._surname = name, surname
 
     @property
     def fullname(self):
