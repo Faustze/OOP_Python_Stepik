@@ -11,3 +11,6 @@ class Point:
 
     def __iter__(self):
         yield from self._fields
+
+points = [Point(4, 7, 0), Point(1, 5, 10), Point(12, 23, 44)]
+print(type(points))

@@ -14,3 +14,10 @@ class DevelopmentTeam:
             yield (junior, 'junior')
         for senior in self._seniors:
             yield (senior, 'senior')
+
+
+beegeek = DevelopmentTeam()
+beegeek.add_junior('Timur')
+beegeek.add_junior('Arthur', 'Valery')
+beegeek.add_senior('Gvido')
+print(*beegeek)
