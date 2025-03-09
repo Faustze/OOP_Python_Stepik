@@ -1,13 +1,11 @@
 import functools
 
-def add_attr_to_class(cls):
-    cls.instances = []
-    old_init = cls.__init__
 
-    @functools.wraps(old_init)
-    def new_init(self, *args, **kwargs):
-        old_init(self, *args, **kwargs)
-        self.instances.append(self)
-        
-    cls.__init__ = new_init
-    return cls
+def add_attr_to_class(**kwargs):
+    def wrapper(cls):
+        for attr, value in kwargs.items():
+            setattr(cls, attr, value)
+
+        return cls
+    
+    return wrapper
